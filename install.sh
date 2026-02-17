@@ -1,6 +1,40 @@
+        #!/bin/bash
 
+red='\033[0;31m'
+green='\033[0;32m'
+blue='\033[0;34m'
+yellow='\033[0;33m'
+plain='\033[0m'
 
+cur_dir=$(pwd)
+
+# --- လှပပြီး လုံခြုံသော Password Lock အပိုင်း ---
+MY_PASS="312021" # သင်ထားချင်တဲ့ Password ကို ဒီမှာပြောင်းပါ
+
+clear
+echo -e "${blue}==================================================${plain}"
+echo -e "${yellow}          3X-UI INSTALLER - ADMIN ACCESS          ${plain}"
+echo -e "${blue}==================================================${plain}"
+echo -e ""
+echo -e "${yellow}  [🔒] Verification Required To Proceed${plain}"
+echo -n -e "${blue}  Enter Admin Password: ${plain}"
+read -s input_pass
+echo -e ""
+
+if [[ "$input_pass" != "$MY_PASS" ]]; then
+    echo -e ""
+    echo -e "${red}  [✘] Access Denied: Incorrect Password!${plain}"
+    echo -e "${blue}==================================================${plain}"
+    exit 1
+fi
+
+echo -e ""
+echo -e "${green}  [✔] Identity Verified! Starting Installation...${plain}"
+echo -e "${blue}==================================================${plain}"
+sleep 1
+# --- Password Lock ပြီးဆုံးခြင်း ---
 #!/bin/bash
+
 # --- Colors ---
 cyan='\033[0;36m'
 green='\033[0;32m'
@@ -10,7 +44,7 @@ red='\033[0;31m'
 purple='\033[0;35m'
 plain='\033[0m'
 bold='\033[1m'
-cur_dir=$(pwd)
+
 # --- Advanced Variables ---
 IP=$(curl -s https://api.ipify.org)
 REGION=$(curl -s ipapi.co/$IP/country_name/)
@@ -60,6 +94,16 @@ echo -e "${green}┃${plain}  ${white}DOWNLOAD SPEED :${plain} ${bold}${cyan}$DO
 echo -e "${green}┃${plain}  ${white}NETWORK STATUS :${plain} ${bold}${green}STABLE / OPTIMIZED${plain}"
 echo -e "${green}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${plain}"
 echo ""
+
+cur_dir=$(pwd)
+
+#!/bin/bash
+
+red='\033[0;31m'
+green='\033[0;32m'
+blue='\033[0;34m'
+yellow='\033[0;33m'
+plain='\033[0m'
 
 cur_dir=$(pwd)
 
@@ -744,43 +788,30 @@ config_after_install() {
             echo ""
 
             prompt_and_setup_ssl "${config_port}" "${config_webBasePath}" "${server_ip}"
-        
-
-            echo -e "${green}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${plain}"
-            echo -e "${green}┃${plain}  ${bold}🚀 SPEEDTEST ANALYTICS${plain}                              ${green}┃${plain}"
-            echo -e "${green}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫${plain}"
-            echo -e "${green}┃${plain}  ${white}DOWNLOAD SPEED :${plain} ${bold}${cyan}$DOWNLOAD_SPEED${plain}"
-            echo -e "${green}┃${plain}  ${white}NETWORK STATUS :${plain} ${bold}${green}STABLE / OPTIMIZED${plain}"
-            echo -e "${green}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${plain}"
+            
+            # Display final credentials and access information
             echo ""
-            # --- Ultimate Neural Deployment Summary ---
+           # --- Future Quantum Success Dashboard ---
             clear
-            echo -e "${CYAN}📡 // FINALIZING_NEURAL_UPLINK...${PLAIN}"
-            sleep 1
-
-            echo -e "${PURPLE}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${PLAIN}"
-            echo -e "${PURPLE}┃${PLAIN}  ${BOLD}${WHITE}🚀 DEPLOYMENT COMPLETED: NEURAL NODES ARE ONLINE${PLAIN}        ${PURPLE}┃${PLAIN}"
-            echo -e "${PURPLE}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${PLAIN}"
-    
-            echo -e "  ${CYAN}┌── [ ${BOLD}${WHITE}ENCRYPTED ACCESS TERMINAL${PLAIN}${CYAN} ]${PLAIN}"
-            echo -e "  ${CYAN}│${PLAIN}"
-            echo -e "  ${CYAN}├──╼ ${BLUE}ID_IDENTITY  :${PLAIN} ${BOLD}${YELLOW}${config_username}${PLAIN}"
-            echo -e "  ${CYAN}├──╼ ${BLUE}ID_PASSCODE  :${PLAIN} ${BOLD}${YELLOW}${config_password}${PLAIN}"
-            echo -e "  ${CYAN}├──╼ ${BLUE}PORT_GATE    :${PLAIN} ${BOLD}${CYAN}${config_port}${PLAIN}"
-            echo -e "  ${CYAN}└──╼ ${BLUE}BASE_PATH    :${PLAIN} ${BOLD}${CYAN}/${config_webBasePath}${PLAIN}"
-
-            echo -e ""
-            echo -e "  ${CYAN}┌── [ ${BOLD}${WHITE}SECURE NEURAL LINK (URL)${PLAIN}${CYAN} ]${PLAIN}"
-            echo -e "  ${CYAN}│${PLAIN}"
-            echo -e "  ${CYAN}└──╼ ${BOLD}${GREEN}https://${SSL_HOST}:${config_port}/${config_webBasePath}${PLAIN}"
-
-            echo -e ""
-            echo -e "${CYAN}  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo -e "  ${BOLD}${RED}  [!] CRITICAL :${PLAIN} ${WHITE}STORE ACCESS KEYS IN A SECURE VAULT!${PLAIN}"
-            echo -e "  ${BOLD}${GREEN}  [✓] SECURITY :${PLAIN} ${WHITE}SSL ENCRYPTION FULLY ACTIVE (ENFORCED)${PLAIN}"
-            echo -e "${CYAN}  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo -e "  ${PURPLE}  // SYSTEM_STATUS: STABLE  // ACCESS_LEVEL: ROOT${PLAIN}"
+            echo -e "${GREEN}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${PLAIN}"
+            echo -e "${GREEN}┃${PLAIN}  ${BOLD}${GREEN}🚀 NEURAL LINK ESTABLISHED: DEPLOYMENT SUCCESS!${PLAIN}     ${GREEN}┃${PLAIN}"
+            echo -e "${GREEN}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${PLAIN}"
             echo ""
+            echo -e "  ${CYAN}TERMINAL ACCESS GRANTED // CORE_SYSTEM_READY${PLAIN}"
+            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
+            echo -e "  ${BLUE}🔹 USERNAME    :${PLAIN} ${BOLD}${YELLOW}${config_username}${PLAIN}"
+            echo -e "  ${BLUE}🔹 PASSWORD    :${PLAIN} ${BOLD}${YELLOW}${config_password}${PLAIN}"
+            echo -e "  ${BLUE}🔹 ACCESS PORT :${PLAIN} ${BOLD}${YELLOW}${config_port}${PLAIN}"
+            echo -e "  ${BLUE}🔹 WEB PATH    :${PLAIN} ${BOLD}${YELLOW}/${config_webBasePath}${PLAIN}"
+            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
+            echo ""
+            echo -e "  ${BOLD}${PURPLE}🌐 SECURE ACCESS URL:${PLAIN}"
+            echo -e "  ${BOLD}${BLUE}https://${SSL_HOST}:${config_port}/${config_webBasePath}${PLAIN}"
+            echo ""
+            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
+            echo -e "  ${RED}⚠️  CRITICAL:${PLAIN} ${WHITE}SAVE THESE CREDENTIALS SECURELY!${PLAIN}"
+            echo -e "  ${GREEN}🛡️  SECURITY:${PLAIN} ${WHITE}SSL CERTIFICATE ACTIVE & ENFORCED${PLAIN}"
+            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
         else
             local config_webBasePath=$(gen_random_string 18)
             echo -e "${yellow}WebBasePath is missing or too short. Generating a new one...${plain}"
@@ -809,27 +840,11 @@ config_after_install() {
             
             echo -e "${yellow}Default credentials detected. Security update required...${plain}"
             ${xui_folder}/x-ui setting -username "${config_username}" -password "${config_password}"
-           # --- Future Quantum Success Dashboard ---
-            clear
-            echo -e "${GREEN}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${PLAIN}"
-            echo -e "${GREEN}┃${PLAIN}  ${BOLD}${GREEN}🚀 NEURAL LINK ESTABLISHED: DEPLOYMENT SUCCESS!${PLAIN}     ${GREEN}┃${PLAIN}"
-            echo -e "${GREEN}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${PLAIN}"
-            echo ""
-            echo -e "  ${CYAN}TERMINAL ACCESS GRANTED // CORE_SYSTEM_READY${PLAIN}"
-            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo -e "  ${BLUE}🔹 USERNAME    :${PLAIN} ${BOLD}${YELLOW}${config_username}${PLAIN}"
-            echo -e "  ${BLUE}🔹 PASSWORD    :${PLAIN} ${BOLD}${YELLOW}${config_password}${PLAIN}"
-            echo -e "  ${BLUE}🔹 ACCESS PORT :${PLAIN} ${BOLD}${YELLOW}${config_port}${PLAIN}"
-            echo -e "  ${BLUE}🔹 WEB PATH    :${PLAIN} ${BOLD}${YELLOW}/${config_webBasePath}${PLAIN}"
-            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo ""
-            echo -e "  ${BOLD}${PURPLE}🌐 SECURE ACCESS URL:${PLAIN}"
-            echo -e "  ${BOLD}${BLUE}https://${SSL_HOST}:${config_port}/${config_webBasePath}${PLAIN}"
-            echo ""
-            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo -e "  ${RED}⚠️  CRITICAL:${PLAIN} ${WHITE}SAVE THESE CREDENTIALS SECURELY!${PLAIN}"
-            echo -e "  ${GREEN}🛡️  SECURITY:${PLAIN} ${WHITE}SSL CERTIFICATE ACTIVE & ENFORCED${PLAIN}"
-            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
+            echo -e "Generated new random login credentials:"
+            echo -e "###############################################"
+            echo -e "${green}Username: ${config_username}${plain}"
+            echo -e "${green}Password: ${config_password}${plain}"
+            echo -e "###############################################"
         else
             echo -e "${green}Username, Password, and WebBasePath are properly set.${plain}"
         fi
@@ -1033,19 +1048,20 @@ install_x-ui() {
     
     echo -e "${green}x-ui ${tag_version}${plain} installation finished, it is running now..."
     echo -e ""
+    # --- 3X-UI NEURAL COMMAND MATRIX ---
     echo -e "${CYAN}┌────────────────────────────────────────────────────────────┐${PLAIN}"
     echo -e "${CYAN}│${PLAIN}  ${BOLD}${WHITE}💻 SYSTEM OS    :${PLAIN} ${BLUE}$(uname -s)${PLAIN}  ${BOLD}${WHITE}ARCH:${PLAIN} ${BLUE}$(uname -m)${PLAIN}                 ${CYAN}│${PLAIN}"
     echo -e "${CYAN}│${PLAIN}  ${BOLD}${WHITE}📡 KERNEL LINK  :${PLAIN} ${BLUE}$(uname -r | cut -d'-' -f1)${PLAIN}                          ${CYAN}│${PLAIN}"
     echo -e "${CYAN}├────────────────────────────────────────────────────────────┤${PLAIN}"
-    echo -e "${CYAN}│${PLAIN}      ${BOLD}${PURPLE}⚡ [ X-UI NEURAL COMMAND INTERFACE v4.0 ]${PLAIN}          ${CYAN}│${PLAIN}"
+    cho -e "${CYAN}│${PLAIN}      ${BOLD}${PURPLE}⚡ [ X-UI NEURAL COMMAND INTERFACE v4.0 ]${PLAIN}          ${CYAN}│${PLAIN}"
     echo -e "${CYAN}└────────────────────────────────────────────────────────────┘${PLAIN}"
     echo ""
-    
+
     echo -e "${CYAN}    [ ${BOLD}${YELLOW}CORE_OPERATIONS${PLAIN}${CYAN} ]${PLAIN}"
     echo -e "${CYAN}    ◈${PLAIN}  ${BLUE}x-ui${plain}             ${WHITE}▸ Master Admin Shell${plain}"
     echo -e "${CYAN}    ◈${PLAIN}  ${BLUE}x-ui start${plain}       ${WHITE}▸ Ignite Neural Nodes${plain}"
     echo -e "${CYAN}    ◈${PLAIN}  ${BLUE}x-ui stop${plain}        ${WHITE}▸ Kill Process Tree${plain}"
-    echo -e "${CYAN}    ◈${PLAIN}  ${BLUE}x-ui restart${plain}     ${WHITE}▸ Reboot Matrix Core${plain}"
+    echo -e "${CYAN}    ◈${PLAIN}  ${BLUE}x-ui restart${plain}     ${WHITE}▸ Reboot Matrix Core${plain}"    
     echo -e ""
     echo -e "${CYAN}    [ ${BOLD}${YELLOW}DIAGNOSTIC_ANALYSIS${PLAIN}${CYAN} ]${PLAIN}"
     echo -e "${CYAN}    ◈${PLAIN}  ${BLUE}x-ui status${plain}      ${WHITE}▸ Integrity Check${plain}"
@@ -1065,8 +1081,8 @@ install_x-ui() {
     echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
     echo -e "${PURPLE}  [!] ACCESS_TOKEN: GRANTED  [!] READY_FOR_COMMAND_INPUT...${PLAIN}"
     echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-    echo -e "${red}Creator ◈{PLAIN} ${BLUE}HCM Network Panel  ${WHITE}▸(HCM VPN Services)${plain}"
 }
+echo -e "${red} Creator By: HCM Network Panel (HCM VPN Services)${plain}"
 echo -e "${green}Running...${plain}"
 install_base
 install_x-ui $1
