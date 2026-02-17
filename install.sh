@@ -1099,6 +1099,7 @@ install_x-ui() {
     echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
     echo -e "${PURPLE}  [!] ACCESS_TOKEN: GRANTED  [!] READY_FOR_COMMAND_INPUT...${PLAIN}"
     echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
+    echo -e "${red}Creator ◈{PLAIN} ${BLUE}HCM Network Panel  ${WHITE}▸(HCM VPN Services)${plain}"
 }
 echo -e "${green}Running...${plain}"
 install_base
