@@ -15,10 +15,14 @@ clear
 echo -e "${blue}==================================================${plain}"
 echo -e "${yellow}          3X-UI INSTALLER - ADMIN ACCESS          ${plain}"
 echo -e "${blue}==================================================${plain}"
+
 echo -e ""
+
 echo -e "${yellow}  [🔒] Verification Required To Proceed${plain}"
+
 echo -n -e "${blue}  Enter Admin Password: ${plain}"
 read -s input_pass
+
 echo -e ""
 
 if [[ "$input_pass" != "$MY_PASS" ]]; then
