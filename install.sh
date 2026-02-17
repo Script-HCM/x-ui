@@ -1,7 +1,5 @@
 
 cur_dir=$(pwd)
-# --- Settings ---
-SECRET_PASS="312021" # ဒီမှာ Password ပြောင်းပါ
 
 # --- Color Palette ---
 R='\033[0;31m'
@@ -61,7 +59,7 @@ red='\033[0;31m'
 purple='\033[0;35m'
 plain='\033[0m'
 bold='\033[1m'
-
+cur_dir=$(pwd)
 # --- Advanced Variables ---
 IP=$(curl -s https://api.ipify.org)
 REGION=$(curl -s ipapi.co/$IP/country_name/)
