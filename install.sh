@@ -7,7 +7,7 @@ yellow='\033[0;33m'
 plain='\033[0m'
 
 
-
+cur_dir=$(pwd)
 # --- လှပပြီး လုံခြုံသော Password Lock အပိုင်း ---
 SECRET_PASS="312021" # သင်ထားချင်တဲ့ Password ကို ဒီမှာပြောင်းပါ
 
@@ -38,7 +38,7 @@ echo -e "${blue}==================================================${plain}"
 sleep 1
 # --- Password Lock ပြီးဆုံးခြင်း ---
 #!/bin/bash
-cur_dir=$(pwd)
+
 # --- Colors ---
 cyan='\033[0;36m'
 green='\033[0;32m'
