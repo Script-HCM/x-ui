@@ -1,10 +1,6 @@
 
 
 #!/bin/bash
-import time
-import sys
-
-def welcome_banner():
     # Color codes for terminal
     green = "\033[92m"
     cyan = "\033[96m"
