@@ -13,60 +13,43 @@ C='\033[0;36m'
 W='\033[0;37m'
 NC='\033[0m'
 
-# --- Loading Animation ---
-load_anim() {
-    echo -ne "\n${G}Accessing Core System [${NC}"
-    for i in {1..20}; do
-        echo -ne "${G}#${NC}"
-        sleep 0.04
-    done
-    echo -e "${G}] 100%${NC}"
-    sleep 0.5
-}
+import time
+import sys
 
-# --- Login & Welcome Logo Section ---
-login_system() {
-    clear
-    echo -e "${C}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-    echo -e "      ${Y}👑 HCM PREMIUM SCRIPT v3.0 👑${W} SSL ${NC}"
-    echo -e "${C}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+def welcome_banner():
+    # Color codes for terminal
+    green = "\033[92m"
+    cyan = "\033[96m"
+    bold = "\033[1m"
+    reset = "\033[0m"
 
-    attempts=0
-    while [ $attempts -lt 3 ]; do
-        echo -ne "\n${W}🔑 ENTER ACCESS KEY: ${NC}"
-        read -s mypass
-        echo ""
+    banner = f"""
+    {cyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{reset}
+    {green}{bold}
+                     _                  
+                    \ \/ /_   _ _(_)          
+                     \  /| | | | | | 
+                     /  \| |_| | |_| 
+                    /_/\_\\,_|\,_|_| 
+                                                      
+    {reset}
+    {cyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{reset}
+    {bold}      >>> WELCOME TO XUI PREMIUM PANEL <<<{reset}
+    """
 
-        if [[ "$mypass" == "$SECRET_PASS" ]]; then
-            echo -e "\n${G}[✔] ACCESS GRANTED!${NC}"
-            load_anim
-            
-            # Welcome Message Section
-            clear
-            echo -e "${C}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-            echo -e "    ${G}✨ WELCOME TO HCM SCRIPT ✨${NC}"
-            echo -e "    ${Y}Your Premium Tool is Ready to Use${NC}"
-            echo -e "${C}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-            sleep 1.5
-            return 0
-        else
-            attempts=$((attempts+1))
-            echo -e "${R}[✘] WRONG PASSWORD! ($attempts/3)${NC}"
-            sleep 0.5
-        fi
-    done
+    for char in banner:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(0.002) # စာသားတွေ တစ်လုံးချင်း စတိုင်ကျကျ ထွက်လာဖို့
 
-    if [ $attempts -eq 3 ]; then
-        echo -e "\n${R}🚨 ACCESS DENIED! SHUTTING DOWN SYSTEM...${NC}"
-        exit 1
-    fi
-}
+    print(f"{green}[+] System Status: Online{reset}")
+    print(f"{green}[+] Database     : Connected{reset}")
+    print(f"{cyan}[!] Initializing Sp-Run Process...{reset}\n")
+    
+    time.sleep(1)
+    print(f"{bold}Ready to Start!{reset}")
 
-# Login ကို အရင်စစ်မယ်
-login_system
-
-# --- သင့်ရဲ့ ကျန်တဲ့ Code တွေနဲ့ Menu တွေကို ဒီအောက်မှာ ထည့်ပါ ---
-echo -e "\n${B}[+] Starting Main Menu...${NC}"
+welcome_banner()
 #!/bin/bash
 
 # --- Colors ---
