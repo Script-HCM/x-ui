@@ -1,39 +1,6 @@
 
 
 #!/bin/bash
-    # Color codes for terminal
-    green = "\033[92m"
-    cyan = "\033[96m"
-    bold = "\033[1m"
-    reset = "\033[0m"
-
-    banner = f"""
-    {cyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{reset}
-    {green}{bold}
-                     _   _                _ 
-       \ \/ /_   _ _(_) |   \  _ _    _| |
-        \  /| | | | | | | | | |__) / _` | '_ \ / _ \ |
-        /  \| |_| | |_| | | |  _/ (_| | | | |  / |
-       /_/\_\\,_|\,_|_| |_|   
-                                                      
-    {reset}
-    {cyan}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{reset}
-    {bold}      >>> WELCOME TO XUI PREMIUM PANEL <<<{reset}
-    """
-
-    for char in banner:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(0.002) # စာသားတွေ တစ်လုံးချင်း စတိုင်ကျကျ ထွက်လာဖို့
-
-    print(f"{green}[+] System Status: Online{reset}")
-    print(f"{green}[+] Database     : Connected{reset}")
-    print(f"{cyan}[!] Initializing Sp-Run Process...{reset}\n")
-    
-    time.sleep(1)
-    print(f"{bold}Ready to Start!{reset}")
-
-welcome_banner()
 # --- Colors ---
 cyan='\033[0;36m'
 green='\033[0;32m'
