@@ -8,6 +8,10 @@ plain='\033[0m'
 
 cur_dir=$(pwd)
 
+clear
+echo -e "${cyan}📡 // SCANNING SYSTEM ARCHITECTURE...${plain}"
+sleep 1
+
 echo -e "${cyan}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${plain}"
 echo -e "${cyan}┃${plain}  ${bold}${purple}🖥️  ULTIMATE VPS NEURAL DASHBOARD${plain}                     ${cyan}┃${plain}"
 echo -e "${cyan}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫${plain}"
@@ -723,25 +727,17 @@ config_after_install() {
             
             # Display final credentials and access information
             echo ""
-            echo -e "${GREEN}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${PLAIN}"
-            echo -e "${GREEN}┃${PLAIN}  ${BOLD}${GREEN}🚀 NEURAL LINK ESTABLISHED: DEPLOYMENT SUCCESS!${PLAIN}     ${GREEN}┃${PLAIN}"
-            echo -e "${GREEN}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${PLAIN}"
-            echo ""
-            echo -e "  ${CYAN}TERMINAL ACCESS GRANTED // CORE_SYSTEM_READY${PLAIN}"
-            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo -e "  ${BLUE}🔹 USERNAME    :${PLAIN} ${BOLD}${YELLOW}${config_username}${PLAIN}"
-            echo -e "  ${BLUE}🔹 PASSWORD    :${PLAIN} ${BOLD}${YELLOW}${config_password}${PLAIN}"
-            echo -e "  ${BLUE}🔹 ACCESS PORT :${PLAIN} ${BOLD}${YELLOW}${config_port}${PLAIN}"
-            echo -e "  ${BLUE}🔹 WEB PATH    :${PLAIN} ${BOLD}${YELLOW}/${config_webBasePath}${PLAIN}"
-            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo ""
-            echo -e "  ${BOLD}${PURPLE}🌐 SECURE ACCESS URL:${PLAIN}"
-            echo -e "  ${BOLD}${BLUE}https://${SSL_HOST}:${config_port}/${config_webBasePath}${PLAIN}"
-            echo ""
-            echo -e "  ${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
-            echo -e "  ${RED}⚠️  CRITICAL:${PLAIN} ${WHITE}SAVE THESE CREDENTIALS SECURELY!${PLAIN}"
-            echo -e "  ${GREEN}🛡️  SECURITY:${PLAIN} ${WHITE}SSL CERTIFICATE ACTIVE & ENFORCED${PLAIN}"
-            echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
+            echo -e "${green}═══════════════════════════════════════════${plain}"
+            echo -e "${green}     Panel Installation Complete!         ${plain}"
+            echo -e "${green}═══════════════════════════════════════════${plain}"
+            echo -e "${green}Username:    ${config_username}${plain}"
+            echo -e "${green}Password:    ${config_password}${plain}"
+            echo -e "${green}Port:        ${config_port}${plain}"
+            echo -e "${green}WebBasePath: ${config_webBasePath}${plain}"
+            echo -e "${green}Access URL:  https://${SSL_HOST}:${config_port}/${config_webBasePath}${plain}"
+            echo -e "${green}═══════════════════════════════════════════${plain}"
+            echo -e "${yellow}⚠ IMPORTANT: Save these credentials securely!${plain}"
+            echo -e "${yellow}⚠ SSL Certificate: Enabled and configured${plain}"
         else
             local config_webBasePath=$(gen_random_string 18)
             echo -e "${yellow}WebBasePath is missing or too short. Generating a new one...${plain}"
@@ -961,7 +957,7 @@ install_x-ui() {
                 exit 1
             fi
             service_installed=true
-     fi
+        fi
         
         if [ "$service_installed" = true ]; then
             echo -e "${green}Setting up systemd unit...${plain}"
@@ -973,11 +969,12 @@ install_x-ui() {
         else
             echo -e "${red}Failed to install x-ui.service file${plain}"
             exit 1
-       fi
+        fi
     fi
     
     echo -e "${green}x-ui ${tag_version}${plain} installation finished, it is running now..."
     echo -e ""
+    # --- 3X-UI NEURAL COMMAND MATRIX ---
     echo -e "${CYAN}┌────────────────────────────────────────────────────────────┐${PLAIN}"
     echo -e "${CYAN}│${PLAIN}  ${BOLD}${WHITE}💻 SYSTEM OS    :${PLAIN} ${BLUE}$(uname -s)${PLAIN}  ${BOLD}${WHITE}ARCH:${PLAIN} ${BLUE}$(uname -m)${PLAIN}                 ${CYAN}│${PLAIN}"
     echo -e "${CYAN}│${PLAIN}  ${BOLD}${WHITE}📡 KERNEL LINK  :${PLAIN} ${BLUE}$(uname -r | cut -d'-' -f1)${PLAIN}                          ${CYAN}│${PLAIN}"
@@ -1012,7 +1009,6 @@ install_x-ui() {
     echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
 }
 
-echo -e "${red} Creator By: HCM Network Panel (HCM VPN Services)${plain}"
 echo -e "${green}Running...${plain}"
 install_base
 install_x-ui $1
