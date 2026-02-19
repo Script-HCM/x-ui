@@ -1,4 +1,4 @@
-        #!/bin/bash
+#!/bin/bash
 
 red='\033[0;31m'
 green='\033[0;32m'
@@ -7,62 +7,11 @@ yellow='\033[0;33m'
 plain='\033[0m'
 
 cur_dir=$(pwd)
-
-# --- လှပပြီး လုံခြုံသော Password Lock အပိုင်း ---
-MY_PASS="312021" # သင်ထားချင်တဲ့ Password ကို ဒီမှာပြောင်းပါ
-
-clear
+echo -e ""
 echo -e "${blue}==================================================${plain}"
 echo -e "${yellow}          3X-UI INSTALLER - ADMIN ACCESS          ${plain}"
 echo -e "${blue}==================================================${plain}"
 echo -e ""
-echo -e "${yellow}  [🔒] Verification Required To Proceed${plain}"
-echo -n -e "${blue}  Enter Admin Password: ${plain}"
-read -s input_pass
-echo -e ""
-
-if [[ "$input_pass" != "$MY_PASS" ]]; then
-    echo -e ""
-    echo -e "${red}  [✘] Access Denied: Incorrect Password!${plain}"
-    echo -e "${blue}==================================================${plain}"
-    exit 1
-fi
-
-echo -e ""
-echo -e "${green}  [✔] Identity Verified! Starting Installation...${plain}"
-echo -e "${blue}==================================================${plain}"
-sleep 1
-# --- Password Lock ပြီးဆုံးခြင်း ---
-#!/bin/bash
-
-# --- Colors ---
-cyan='\033[0;36m'
-green='\033[0;32m'
-blue='\033[0;34m'
-yellow='\033[0;33m'
-red='\033[0;31m'
-purple='\033[0;35m'
-plain='\033[0m'
-bold='\033[1m'
-
-# --- Advanced Variables ---
-IP=$(curl -s https://api.ipify.org)
-REGION=$(curl -s ipapi.co/$IP/country_name/)
-CITY=$(curl -s ipapi.co/$IP/city/)
-ISP=$(curl -s ipapi.co/$IP/org/)
-OS=$(cat /etc/os-release | grep -w "PRETTY_NAME" | cut -d '"' -f2)
-UPTIME=$(uptime -p | sed 's/up //')
-RAM_TOTAL=$(free -m | awk '/Mem:/ {print $2}')
-RAM_USED=$(free -m | awk '/Mem:/ {print $3}')
-RAM_PERCENT=$(awk "BEGIN {printf \"%.2f\", $RAM_USED*100/$RAM_TOTAL}")
-CPU_MODEL=$(lscpu | grep "Model name" | cut -d ':' -f2 | sed 's/^[ \t]*//')
-CPU_CORES=$(nproc)
-DISK_USAGE=$(df -h / | awk 'NR==2 {print $3 "/" $2 " (" $5 ")"}')
-VIRTUAL=$(systemd-detect-virt)
-
-clear
-echo -e "${cyan}📡 // SCANNING SYSTEM ARCHITECTURE...${plain}"
-sleep 1
 
 echo -e "${cyan}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${plain}"
 echo -e "${cyan}┃${plain}  ${bold}${purple}🖥️  ULTIMATE VPS NEURAL DASHBOARD${plain}                     ${cyan}┃${plain}"
@@ -94,18 +43,6 @@ echo -e "${green}┃${plain}  ${white}DOWNLOAD SPEED :${plain} ${bold}${cyan}$DO
 echo -e "${green}┃${plain}  ${white}NETWORK STATUS :${plain} ${bold}${green}STABLE / OPTIMIZED${plain}"
 echo -e "${green}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${plain}"
 echo ""
-
-cur_dir=$(pwd)
-
-#!/bin/bash
-
-red='\033[0;31m'
-green='\033[0;32m'
-blue='\033[0;34m'
-yellow='\033[0;33m'
-plain='\033[0m'
-
-cur_dir=$(pwd)
 
 xui_folder="${XUI_MAIN_FOLDER:=/usr/local/x-ui}"
 xui_service="${XUI_SERVICE:=/etc/systemd/system}"
@@ -791,8 +728,6 @@ config_after_install() {
             
             # Display final credentials and access information
             echo ""
-           # --- Future Quantum Success Dashboard ---
-            clear
             echo -e "${GREEN}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${PLAIN}"
             echo -e "${GREEN}┃${PLAIN}  ${BOLD}${GREEN}🚀 NEURAL LINK ESTABLISHED: DEPLOYMENT SUCCESS!${PLAIN}     ${GREEN}┃${PLAIN}"
             echo -e "${GREEN}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${PLAIN}"
