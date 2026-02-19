@@ -966,7 +966,7 @@ install_x-ui() {
                 exit 1
             fi
             service_installed=true
-        fi
+     fi
         
         if [ "$service_installed" = true ]; then
             echo -e "${green}Setting up systemd unit...${plain}"
@@ -978,12 +978,11 @@ install_x-ui() {
         else
             echo -e "${red}Failed to install x-ui.service file${plain}"
             exit 1
-        fi
+       fi
     fi
     
     echo -e "${green}x-ui ${tag_version}${plain} installation finished, it is running now..."
     echo -e ""
-    # --- 3X-UI NEURAL COMMAND MATRIX ---
     echo -e "${CYAN}┌────────────────────────────────────────────────────────────┐${PLAIN}"
     echo -e "${CYAN}│${PLAIN}  ${BOLD}${WHITE}💻 SYSTEM OS    :${PLAIN} ${BLUE}$(uname -s)${PLAIN}  ${BOLD}${WHITE}ARCH:${PLAIN} ${BLUE}$(uname -m)${PLAIN}                 ${CYAN}│${PLAIN}"
     echo -e "${CYAN}│${PLAIN}  ${BOLD}${WHITE}📡 KERNEL LINK  :${PLAIN} ${BLUE}$(uname -r | cut -d'-' -f1)${PLAIN}                          ${CYAN}│${PLAIN}"
@@ -1017,6 +1016,7 @@ install_x-ui() {
     echo -e "${PURPLE}  [!] ACCESS_TOKEN: GRANTED  [!] READY_FOR_COMMAND_INPUT...${PLAIN}"
     echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${PLAIN}"
 }
+
 echo -e "${red} Creator By: HCM Network Panel (HCM VPN Services)${plain}"
 echo -e "${green}Running...${plain}"
 install_base
