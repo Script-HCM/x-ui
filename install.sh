@@ -11,38 +11,8 @@ cur_dir=$(pwd)
 clear
 echo -e "${cyan}📡 // SCANNING SYSTEM ARCHITECTURE...${plain}"
 sleep 1
-
-echo -e "${cyan}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${plain}"
-echo -e "${cyan}┃${plain}  ${bold}${purple}🖥️  ULTIMATE VPS NEURAL DASHBOARD${plain}                     ${cyan}┃${plain}"
-echo -e "${cyan}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫${plain}"
-echo -e "${cyan}┃${plain}  ${bold}${white}[ NETWORK IDENTITY ]${plain}                                   ${cyan}┃${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ IP ADDRESS  :${plain} ${bold}${yellow}$IP${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ PROVIDER    :${plain} ${white}$ISP${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ GEO_LOC     :${plain} ${white}$CITY, $REGION${plain}"
-echo -e "${cyan}┃${plain}                                                              ${cyan}┃${plain}"
-echo -e "${cyan}┃${plain}  ${bold}${white}[ CORE SPECIFICATIONS ]${plain}                                ${cyan}┃${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ PROCESSOR   :${plain} ${white}$CPU_MODEL ($CPU_CORES Cores)${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ VIRT_TYPE   :${plain} ${magenta}${VIRTUAL^^}${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ OS_RELEASE  :${plain} ${white}$OS${plain}"
-echo -e "${cyan}┃${plain}                                                              ${cyan}┃${plain}"
-echo -e "${cyan}┃${plain}  ${bold}${white}[ RESOURCE UTILIZATION ]${plain}                               ${cyan}┃${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ UPTIME      :${plain} ${green}$UPTIME${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ RAM_LOAD    :${plain} ${white}$RAM_USED/${RAM_TOTAL}MB ($RAM_PERCENT%)${plain}"
-echo -e "${cyan}┃${plain}  ${blue}▸ DISK_SPACE  :${plain} ${white}$DISK_USAGE${plain}"
-echo -e "${cyan}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${plain}"
-
 echo -e "\n${yellow}⚡ INITIATING NETWORK VELOCITY TEST...${plain}"
 # Speedtest using a 10MB test file
-DOWNLOAD_SPEED=$(curl -s -o /dev/null -w "%{speed_download}\n" http://speedtest.tele2.net/10MB.zip | awk '{printf "%.2f Mbps\n", $1/125000}')
-
-echo -e "${green}┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${plain}"
-echo -e "${green}┃${plain}  ${bold}🚀 SPEEDTEST ANALYTICS${plain}                              ${green}┃${plain}"
-echo -e "${green}┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┫${plain}"
-echo -e "${green}┃${plain}  ${white}DOWNLOAD SPEED :${plain} ${bold}${cyan}$DOWNLOAD_SPEED${plain}"
-echo -e "${green}┃${plain}  ${white}NETWORK STATUS :${plain} ${bold}${green}STABLE / OPTIMIZED${plain}"
-echo -e "${green}┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${plain}"
-echo ""
-
 xui_folder="${XUI_MAIN_FOLDER:=/usr/local/x-ui}"
 xui_service="${XUI_SERVICE:=/etc/systemd/system}"
 
